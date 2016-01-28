@@ -30,3 +30,16 @@ def create_child(parents, mutate_chance = 5):
     mutate(child)
 
   return child
+
+def create_population(population_size, cities):
+  """Creates a population(list of routes) of of length population_size from the cities provided
+  
+  Returns this population"""
+  cities_cpy = cities[:]
+
+  population = [None] * population_size
+  for i in range(population_size):
+    random.shuffle(cities_cpy)
+    population[i] = cities_cpy[:]
+  
+  return population
