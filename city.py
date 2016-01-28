@@ -8,6 +8,13 @@ def total_distance(route):
 
   return d
 
+def route_cmp(route_a, route_b):
+  """Returns -1 if route_a < route_b, 0 if they are equal, and 1 if
+  route_a > route_b"""
+  if (route_a < route_b): return -1
+  elif(route_a == route_b): return 0
+  else: return 1
+
 def distance(a, b):
   """Returns the distance between two cities, a and b"""
   return hypot(a.x - b.x, a.y - b.y)
