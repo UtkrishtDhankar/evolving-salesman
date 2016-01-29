@@ -1,4 +1,17 @@
 from math import hypot
+import sys
+
+def read_cities():
+  """Reads in cities from the standard input,
+  and returns a list of these cities"""
+
+  cities = []
+
+  for line in sys.stdin:
+    x, y = line.split()
+    cities += [city((int(x), int(y)))]
+
+  return cities
 
 def total_distance(route):
   """Calculates the total distance taken by the route"""
@@ -24,3 +37,5 @@ class city:
     """Initializes the city"""
     self.x = x
     self.y = y
+  def __repr__(self):
+    return '(' + str(self.x) + ', ' + str(self.y) + ')'
